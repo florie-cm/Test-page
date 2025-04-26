@@ -1,0 +1,390 @@
+
+html, body, .page-container {
+    height: 100%;
+    
+   
+    body.no-scroll {
+        overflow: hidden;
+        height: 100vh;
+      }
+      
+
+    #wrapper {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 20px;
+        background: rgba(0, 0, 0, 0.6);
+        text-align: center;
+        animation: fadeIn 1.2s ease forwards;
+    }
+    
+    #intro {
+        max-width: 800px;
+        margin: 0 auto;
+        color: #fff;
+    }
+    
+    #intro h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #FF6600; /* Dark orange */
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+    
+    #intro p {
+        font-size: 1.2rem;
+        font-weight: 300;
+        color: #eee;
+        line-height: 1.6;
+    }
+    
+    /* Optional: subtle fade-in animation */
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+   /* Main Section */
+#main {
+    padding: 60px 20px;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/* Featured Post */
+.post.featured {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.post.featured h2 a {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #FF6600; /* Dark orange, matches intro */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.post.featured h2 a:hover {
+    color: #ff8533; /* Slightly lighter orange on hover */
+}
+
+/* Services Container */
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Service Card */
+.service-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px 20px;
+    border-radius: 12px;
+    width: 300px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  
+}
+
+.service-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-8px);
+    border-color:  #FF6600;
+    
+}
+
+/* Icon styling */
+.service-card .icon {
+    font-size: 3rem;
+    color: #FF6600;
+    margin-bottom: 20px;
+}
+
+/* Titles */
+.service-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+/* Paragraphs */
+.service-card p {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* List styling */
+.service-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-card ul li {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: #eee;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* List item icons */
+.service-card ul li::before {
+    content: "✔️"; /* Checkmark icon */
+    color:#FF6600;
+    font-size: 1rem;
+}
+
+/* Responsive: Stack on small screens */
+@media (max-width: 992px) {
+    .services {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        width: 90%;
+    }
+}
+
+/* ========================= */
+/* Fancy Scroll Down Button ✨ */
+/* ========================= */
+.actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    padding: 30px;
+   
+    border-radius: 20px;
+}
+
+.actions li {
+    list-style: none;
+}
+
+.actions .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ff6600, #ff9900);
+    color: white;
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 10px #ff6600, 0 0 20px #ff6600, 0 0 30px #ff6600;
+    border: none;
+}
+
+.actions .button:hover {
+    box-shadow: 0 0 20px #ff9900, 0 0 30px #ff9900, 0 0 40px #ff9900;
+    transform: translateY(-3px);
+}
+
+section#slideshow {
+  
+    width: 100%;
+    max-width: 1200px;
+    margin: 60px auto; /* center the section and add vertical spacing */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* space between elements inside */
+    text-align: center;   
+ 
+   
+   
+    transition: all 0.3s ease;
+   
+  }
+  
+
+  #slideshow h2 {
+   font-size: 2.5rem;
+    font-weight: 700;
+    color: #FF6600; /* Dark orange, matches intro */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+
+
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .slide.active {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .slider {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9; /* Ensures image stays proportional */
+    overflow: hidden;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Show full image without stretch */
+    background: #000; /* Optional: black behind image if space shows */
+  }
+  
+
+  .nav-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 20px;
+    z-index: 10;
+    pointer-events: none; /* Allow clicks through container */
+  }
+  
+  .nav-buttons button {
+    pointer-events: all;  /* Enable clicks on buttons */
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    transition: background 0.3s ease;
+  }
+  @media (max-width: 768px) {
+    .slider {
+      height: auto;
+      aspect-ratio: 16/9;
+    }
+  
+    .slide img {
+      object-fit: contain;
+    }
+  
+    .nav-buttons button {
+      width: 40px;
+      height: 40px;
+      font-size: 1.5rem;
+    }
+  
+    #slideshow h2 {
+      font-size: 2rem;
+    }
+  }
+  
+  
+#bg-video {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    object-fit: cover;
+    background: url(../img/tm-astro-bg.jpg) center/cover no-repeat;
+}
+
+
+#main-footer {
+    background: rgba(0, 0, 0, 0.6);
+    color: #ccc;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.95rem;
+    
+  }
+  
+  #main-footer a {
+    color: #FF6600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  #main-footer a:hover {
+    color: #ff8533;
+  }
+  
+/* Preloader 
+	https://ihatetomatoes.net/create-custom-preloading-screen/
+*/
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+   #loader-wrapper { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 2000; }
+   #loader { display: block; position: relative; left: 50%; top: 50%; width: 150px; height: 150px; margin: -75px 0 0 -75px; border-radius: 50%; border: 3px solid transparent; border-top-color: #3498db; /* Chrome, Opera 15+, Safari 5+ */
+   	animation: spin 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */ z-index: 2001; }
+   #loader:before { content: ""; position: absolute; top: 5px; left: 5px; right: 5px; bottom: 5px; border-radius: 50%; border: 3px solid transparent;
+   	border-top-color: #e74c3c; /* Chrome, Opera 15+, Safari 5+ */
+   animation: spin 3s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */ }
+   #loader:after { content: ""; position: absolute; top: 15px; left: 15px; right: 15px; bottom: 15px; border-radius: 50%; border: 3px solid transparent;
+border-top-color: #f9c922; /* Chrome, Opera 15+, Safari 5+ */ animation: spin 1.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */ }
+@keyframes spin {
+	0%   {  /* Chrome, Opera 15+, Safari 3.1+ */  /* IE 9 */
+		transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+	}
+	100% {  /* Chrome, Opera 15+, Safari 3.1+ */  /* IE 9 */
+		transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+	}
+}
+
+#loader-wrapper .loader-section { position: fixed; top: 0; width: 51%; height: 100%; background: #222222; z-index: 2000;  /* Chrome, Opera 15+, Safari 3.1+ */  /* IE 9 */ transform: translateX(0);  /* Firefox 16+, IE 10+, Opera */}
+
+#loader-wrapper .loader-section.section-left { left: 0; }
+
+#loader-wrapper .loader-section.section-right { right: 0; }
+
+/* Loaded */
+.loaded #loader-wrapper .loader-section.section-left {  /* Chrome, Opera 15+, Safari 3.1+ */  /* IE 9 */
+	transform: translateX(-100%);  /* Firefox 16+, IE 10+, Opera */  
+	transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.loaded #loader-wrapper .loader-section.section-right {  /* Chrome, Opera 15+, Safari 3.1+ */  /* IE 9 */
+	transform: translateX(100%);  /* Firefox 16+, IE 10+, Opera */  
+	transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.loaded #loader {
+	opacity: 0;  
+	transition: all 0.3s ease-out;
+}
+.loaded #loader-wrapper {
+	visibility: hidden;  /* Chrome, Opera 15+, Safari 3.1+ */  /* IE 9 */
+	transform: translateY(-100%);  /* Firefox 16+, IE 10+, Opera */  
+	transition: all 0.3s 1s ease-out;
+}
+/* JavaScript Turned Off */
+.no-js #loader-wrapper { display: none; }
+/*============ Preloader ends ==================================*/
+}
